@@ -1,0 +1,113 @@
+							Algorithme : Pendu
+//BUT pendre les gens
+
+//ENTREE le joueur rentre n'importe quel mot
+
+//SORTIE le joueur trouvre le mot
+
+//CONSTANTE
+TAILLE 20
+
+//FONCTION
+
+procedure affichage(VAR mot,revealed:CHAR r:CHAR):CHAR 
+
+VAR I :ENTIER
+
+DEBUT
+	TANTQUE mot de i
+	FAIRE
+		SI mot de i est égal à r
+		revealed de i est égale à 1
+		i pas de 1
+		
+FIN PROCEDURE
+
+PROCEDURE mémoire()
+
+VAR c:CHAR
+
+DEBUT
+
+	TANT QUE c est égale à getchar <> saut de ligne 
+
+
+FINPROCEDURE
+
+PROCEDURE CoupRestant( VAR mot: CHAR, CoupRestant:ENTIER): ENTIER
+
+VAR vie:ENTIER
+
+
+DEBUT
+	vie=CoupRestant
+
+	CAS PARMIS(vie)
+
+	case 10: ECRIRE " "
+	case 9: ECRIRE "_|__"
+	case 8: ECRIRE " " "|", "_|__"
+	case 7: ECRIRE " " "", " " "\n", "_|__"
+	case 6: ECRIRE "_|__", " " "", " " "", "_|__"
+	case 5: ECRIRE " " "|", " " "|", " " "|", " " "|", "_|__"
+	case 4: ECRIRE "____________", " " "|", " " "|", " " "|", " " "|", "_|__"
+	case 3: ECRIRE "____________"," " "|" " " " " " " " " " " " " " " "|", " " "|", " " "|", " " "|", " " "|", "_|__"
+	case 2: ECRIRE "____________", " " "|" " " " " " " " " " " " " " " "|", " " "|" " " " " " " " " " " " " " " "O", " " "|", " " "|", " " "|", "_|__"
+	case 1: ECRIRE "____________", " " "|" " " " " " " " " " " " " " " "|", " " "|" " " " " " " " " " " " " " " "O", " " "|" " " " " " " " " " "" " "/" "|" "\\", " " "|", "_|__"
+
+
+	SI (vie<0)
+	ALORS
+		ECRIRE"_" "_" "_" "_" "_" "_" "_" "_" "_" "_" "_" "_"
+        	ECRIRE" " "|" " " " " " " " " " " " " " " "|\n"
+        	ECRIRE" " "|" " " " " " " " " " " " " " " "O\n"
+        	ECRIRE" " "|" " " " " " " " " " "" " "/" "|" "\\\n"
+        	ECRIRE" " "|" " " " " " " " " " " " " "/" " " "\\\n"
+        	ECRIRE" " "|\n"
+        	ECRIRE"_|__\n"
+		
+		ECRIRE" Votre pendaison est complète, le mot était " +mot
+
+
+	SINON
+
+		ECRIRE "Bravo vous avez réussi"
+
+FINPROCEDURE
+
+
+
+
+
+//main
+
+
+VAR i=0, l=0, coupRestant=10 : ENTIER
+     mot,revealed,c : CHAR
+
+DEBUT
+ 	ECRIRE "Veuilliez entrer le mot secret"
+		LIRE mot
+
+	l=strlen de mot
+
+	memset(revealed, 0, TAILLE)
+
+	//jeu
+
+	mémoire();
+
+        ECRIRE "ecrire un caractere"
+        	LIRE c
+
+         SI(c <> revealed[i])
+        {
+            coupRestant pas de -1
+            CoupRestant(coupRestant,mot)
+        }
+        Affichage(mot, revealed, c)
+    }	
+	
+FIN
+
+	
